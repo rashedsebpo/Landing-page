@@ -8,10 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'sebpo-blue': '#1e88e5',
+        'sebpo-blue': '#006F99',
         'sebpo-dark-blue': '#0d47a1',
         'sebpo-orange': '#ff9800',
         'sebpo-yellow': '#ffc107',
+        'sebpo-peach': '#FBB262',
+        'sebpo-light-bg': '#FFF6F1',
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],

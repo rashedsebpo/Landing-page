@@ -1,70 +1,48 @@
 import { motion } from 'framer-motion'
 
+// Import brand logos
+import clipcentricLogo from '../assets/brands/clipcentric.png'
+import expediaLogo from '../assets/brands/expedia.png'
+import multiviewLogo from '../assets/brands/multiview.png'
+import spiceworksLogo from '../assets/brands/spiceworks.png'
+import soarsGroupLogo from '../assets/brands/soars-group.png'
+import accuweatherLogo from '../assets/brands/accuweather.png'
+import bbcNewsLogo from '../assets/brands/bbc-news.png'
+import citrusadLogo from '../assets/brands/citrusad.png'
+
 const TrustedBrands = () => {
   const brands = [
     {
       name: 'clipcentric',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-semibold">clipcentric</text>
-        </svg>
-      )
+      logo: clipcentricLogo
     },
     {
       name: 'Expedia',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-bold">Expedia</text>
-        </svg>
-      )
+      logo: expediaLogo
     },
     {
       name: 'MULTIVIEW',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-semibold">MULTIVIEW</text>
-        </svg>
-      )
+      logo: multiviewLogo
     },
     {
       name: 'spiceworks',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-semibold">spiceworks</text>
-        </svg>
-      )
+      logo: spiceworksLogo
     },
     {
       name: 'SOARS GROUP',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-xs font-semibold">SOARS GROUP</text>
-        </svg>
-      )
+      logo: soarsGroupLogo
     },
     {
       name: 'AccuWeather',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-semibold">AccuWeather</text>
-        </svg>
-      )
+      logo: accuweatherLogo
     },
     {
       name: 'BBC NEWS',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-bold">BBC NEWS</text>
-        </svg>
-      )
+      logo: bbcNewsLogo
     },
     {
       name: 'CitrusAd',
-      logo: (
-        <svg className="h-8 w-auto" viewBox="0 0 120 40" fill="currentColor">
-          <text x="10" y="25" className="text-sm font-bold">CitrusAd</text>
-        </svg>
-      )
+      logo: citrusadLogo
     }
   ]
 
@@ -90,7 +68,7 @@ const TrustedBrands = () => {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white rounded-t-2xl -translate-y-5">
       <div className="container-max section-padding">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -109,15 +87,19 @@ const TrustedBrands = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center max-w-4xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center max-w-5xl mx-auto"
         >
           {brands.map((brand, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="flex items-center justify-center text-gray-500 hover:text-gray-700 transition-colors duration-300"
+              className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-300"
             >
-              {brand.logo}
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                className="h-10 md:h-12 w-auto max-w-[140px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
             </motion.div>
           ))}
         </motion.div>

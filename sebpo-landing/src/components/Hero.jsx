@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-teal-500 to-teal-700 min-h-screen flex items-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center relative overflow-hidden" style={{background: 'linear-gradient(135deg, #096F99 0%, #096F99 71%, #074d6b 100%)'}}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full"></div>
@@ -39,7 +39,7 @@ const Hero = () => {
               SEBPO is a leading global outsourcing partner to many of<br className="hidden md:block" />
               the world's largest advertising, media and tech companies.
             </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl text-yellow-300 font-semibold">
+            <p className="text-xl md:text-2xl lg:text-3xl font-semibold" style={{color: '#FBB262'}}>
               @United States, Bangladesh and El Salvador
             </p>
           </motion.div>
@@ -50,7 +50,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <button className="bg-white text-teal-600 font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 text-lg inline-flex items-center gap-2 hover:scale-105">
+            <button
+              className="font-semibold py-4 px-8 transition-all duration-300 text-lg inline-flex items-center gap-2 hover:scale-105"
+              style={{
+                borderRadius: '0.9375rem',
+                background: '#FFF6F1',
+                color: '#FBB262'
+              }}
+            >
               Learn more about sebpo
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
