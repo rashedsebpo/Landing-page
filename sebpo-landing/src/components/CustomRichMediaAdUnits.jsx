@@ -97,27 +97,36 @@ const CustomRichMediaAdUnits = () => {
               viewport={{ once: true }}
               className="flex-shrink-0 w-full lg:w-auto"
             >
+              {/* Gray Background Container - Matching Reference Screenshot */}
               <div
-                className="rounded-[15px] overflow-hidden transition-transform hover:scale-105 duration-300 mx-auto"
+                className="rounded-[20px] p-6 md:p-8 mx-auto transition-transform hover:scale-105 duration-300"
                 style={{
                   width: '100%',
                   maxWidth: '530px',
-                  height: 'auto',
-                  aspectRatio: '530 / 441.331',
-                  border: '1px solid #DBDEE1',
-                  background: `url(${adUnits[currentSlide].image}) lightgray 50% / cover no-repeat`,
-                  boxShadow: '0px 30px 58px 0px rgba(99, 99, 99, 0.20)'
+                  background: '#D1D5DB',
+                  boxShadow: '0px 20px 40px 0px rgba(0, 0, 0, 0.10)'
                 }}
               >
-                <img
-                  src={adUnits[currentSlide].image}
-                  alt={adUnits[currentSlide].alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm sm:text-lg rounded-[15px] p-4">${adUnits[currentSlide].title}</div>`;
+                {/* Inner Image Container */}
+                <div
+                  className="rounded-[15px] overflow-hidden"
+                  style={{
+                    width: '100%',
+                    height: '320px',
+                    border: '1px solid #DBDEE1',
+                    boxShadow: '0px 10px 25px 0px rgba(99, 99, 99, 0.15)'
                   }}
-                />
+                >
+                  <img
+                    src={adUnits[currentSlide].image}
+                    alt={adUnits[currentSlide].alt}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `<div class="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm sm:text-lg rounded-[15px] p-4">${adUnits[currentSlide].title}</div>`;
+                    }}
+                  />
+                </div>
               </div>
             </motion.div>
 
